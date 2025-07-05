@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+.comparison-table tr:nth-child(even) {
+            background: rgba(248, 249, 250, 0.5);
+        }<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -12,16 +14,63 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            animation: gradientShift 10s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+            50% { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
         }
         .header {
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #333;
             padding: 30px;
             border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out, float 6s ease-in-out infinite;
         }
         .header h1 {
             margin: 0;
@@ -34,26 +83,68 @@
             opacity: 0.9;
         }
         .section {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             padding: 25px;
             margin-bottom: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border-left: 5px solid #667eea;
+            animation: slideInLeft 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .section:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+        
+        .section:nth-child(even) {
+            animation-delay: 0.4s;
         }
         .tariff-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 25px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
             border: 2px solid #e9ecef;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .tariff-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        
+        .tariff-card:hover::before {
+            opacity: 1;
+            animation: shimmer 1.5s ease-in-out;
+        }
+        
         .tariff-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-color: #667eea;
         }
+        
+        .tariff-card:nth-child(1) { animation-delay: 0.1s; }
+        .tariff-card:nth-child(2) { animation-delay: 0.2s; }
+        .tariff-card:nth-child(3) { animation-delay: 0.3s; }
+        .tariff-card:nth-child(4) { animation-delay: 0.4s; }
+        .tariff-card:nth-child(5) { animation-delay: 0.5s; }
         .tariff-header {
             text-align: center;
             margin-bottom: 20px;
@@ -99,12 +190,34 @@
             padding: 5px 0;
             display: flex;
             align-items: center;
+            animation: fadeInUp 0.5s ease-out;
+            animation-fill-mode: both;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-list li:nth-child(1) { animation-delay: 0.1s; }
+        .feature-list li:nth-child(2) { animation-delay: 0.2s; }
+        .feature-list li:nth-child(3) { animation-delay: 0.3s; }
+        .feature-list li:nth-child(4) { animation-delay: 0.4s; }
+        .feature-list li:nth-child(5) { animation-delay: 0.5s; }
+        .feature-list li:nth-child(6) { animation-delay: 0.6s; }
+        
+        .feature-list li:hover {
+            transform: translateX(10px);
+            color: #667eea;
         }
         .feature-list li::before {
             content: "✓";
             color: #28a745;
             font-weight: bold;
             margin-right: 8px;
+            transition: all 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .feature-list li:hover::before {
+            color: #667eea;
+            transform: scale(1.2);
         }
         .veo3-highlight {
             background: linear-gradient(135deg, #ff6b6b, #feca57);
@@ -114,6 +227,20 @@
             margin: 20px 0;
             text-align: center;
             box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+            animation: pulse 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .veo3-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s ease-in-out infinite;
         }
         .veo3-highlight h3 {
             margin: 0 0 10px 0;
@@ -122,13 +249,15 @@
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin: 20px 0;
             min-width: 800px;
             font-size: 0.8em;
+            animation: fadeInUp 1s ease-out;
         }
         .table-container {
             width: 100%;
@@ -181,12 +310,29 @@
             white-space: nowrap;
         }
         .comparison-table th {
-            background: #667eea;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             font-weight: 600;
+            position: relative;
         }
-        .comparison-table tr:nth-child(even) {
-            background: #f8f9fa;
+        
+        .comparison-table th::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        .comparison-table tr {
+            transition: all 0.3s ease;
+        }
+        
+        .comparison-table tr:hover {
+            background: rgba(102, 126, 234, 0.1) !important;
+            transform: scale(1.02);
         }
         .highlight {
             background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
@@ -225,10 +371,29 @@
             text-align: center;
             transition: all 0.3s ease;
             margin: 10px 5px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         }
         .price-table {
             display: grid;
@@ -397,12 +562,11 @@
             </div>
             
             <div class="feature-group">
-                <h4>🎨 Изображения (100/день + регулярные премиум)</h4>
+                <h4>🎨 Изображения (12 картинок/неделю)</h4>
                 <ul class="feature-list">
-                    <li>Kandinsky 3.1 (50/день)</li>
-                    <li><strong>Midjourney:</strong> 20 изображений/месяц</li>
-                    <li><strong>DALL-E 3:</strong> 10 изображений/месяц</li>
-                    <li><strong>FLUX Dev:</strong> 20 изображений/месяц</li>
+                    <li>Kandinsky 3.1 - российский ИИ, понимает русский</li>
+                    <li>GPT-4o Images - качественные изображения от OpenAI</li>
+                    <li>FLUX Schnell - быстрая генерация</li>
                 </ul>
             </div>
             
@@ -691,8 +855,7 @@
     <div class="section" id="comparison">
         <h2>📊 Сравнительная таблица тарифов</h2>
         
-        <!-- Версия для десктопа -->
-        <div class="table-container" style="display: block;">
+        <div class="table-container">
             <table class="comparison-table">
                 <thead>
                     <tr>
@@ -797,35 +960,56 @@
             </table>
         </div>
         
-        <!-- Мобильная версия в виде карточек -->
-        <div style="display: none;" class="mobile-comparison">
-            <div style="display: grid; gap: 15px; margin: 20px 0;">
-                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #28a745;">
-                    <h4 style="margin: 0 0 10px 0; color: #28a745;">🆓 БЕСПЛАТНЫЙ — 0₽/месяц</h4>
-                    <div style="font-size: 0.9em; line-height: 1.4;">
-                        💬 Чат: 100/неделю<br>
-                        🎨 Изображения: 12/неделю<br>
-                        🔍 Поиск: 5/день<br>
-                        📄 Документы: 5/месяц
-                    </div>
+        <div style="font-size: 0.9em; color: #666; margin-top: 15px; text-align: center; padding: 10px; background: #e3f2fd; border-radius: 8px;">
+            📱 <strong>Для мобильных:</strong> Пролистайте таблицу пальцем влево-вправо для просмотра всех колонок
+        </div>
+        
+        <!-- Мобильная версия - краткие карточки -->
+        <div class="mobile-summary" style="display: none; margin-top: 20px;">
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #28a745;">
+                <h4 style="margin: 0 0 10px 0; color: #28a745;">🆓 БЕСПЛАТНЫЙ — 0₽/месяц</h4>
+                <div style="font-size: 0.9em; color: #666;">
+                    💬 Чат: 100/неделю • 🎨 Изображения: 12/неделю • 🔍 Поиск: 5/день
                 </div>
-                
-                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ffc107;">
-                    <h4 style="margin: 0 0 10px 0; color: #ffc107;">⭐ СТАРТОВЫЙ — 399₽/месяц</h4>
-                    <div style="font-size: 0.9em; line-height: 1.4;">
-                        💬 Чат: 220/день<br>
-                        🎨 Изображения: 65/день<br>
-                        🏆 Midjourney: 10/месяц<br>
-                        🎭 DALL-E 3: 5/месяц<br>
-                        🎬 Видео: 3/месяц<br>
-                        🎵 Музыка: 5/месяц
-                    </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #ffc107;">
+                <h4 style="margin: 0 0 10px 0; color: #ffc107;">⭐ СТАРТОВЫЙ — 399₽/месяц</h4>
+                <div style="font-size: 0.9em; color: #666;">
+                    💬 Чат: 220/день • 🎨 Изображения: 65/день • 🏆 Midjourney: 10/мес • 🎭 DALL-E 3: 5/мес • 🎬 Видео: 3/мес • 🎵 Музыка: 5/мес
                 </div>
-                
-                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #17a2b8;">
-                    <h4 style="margin: 0 0 10px 0; color: #17a2b8;">🏠 КОМФОРТ — 699₽/месяц</h4>
-                    <div style="font-size: 0.9em; line-height: 1.4;">
-                        💬 Чат: 420/день<br>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #17a2b8;">
+                <h4 style="margin: 0 0 10px 0; color: #17a2b8;">🏠 КОМФОРТ — 699₽/месяц</h4>
+                <div style="font-size: 0.9em; color: #666;">
+                    💬 Чат: 420/день • 🎨 Изображения: 100/день • 🏆 Midjourney: 20/мес • 🎭 DALL-E 3: 10/мес • 🎬 Видео: 15/мес • 🎵 Музыка: 23/мес • 🔄 Face Swap: 15/мес
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #dc3545;">
+                <h4 style="margin: 0 0 10px 0; color: #dc3545;">🔥 ПОПУЛЯРНЫЙ — 1199₽/месяц</h4>
+                <div style="font-size: 0.9em; color: #666;">
+                    💬 Чат: 830/день • 🎨 Изображения: 170/день • 🏆 Midjourney: 35/мес • 🎭 DALL-E 3: 20/мес • 🎬 Видео: 26/мес • <strong style="color: #dc3545;">🎬 VEO3: 1/мес ✅</strong> • 🎵 Музыка: 42/мес • 🔄 Face Swap: 25/мес • 🔍 Поиск: Безлимит
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #6f42c1;">
+                <h4 style="margin: 0 0 10px 0; color: #6f42c1;">💎 МАКСИМАЛЬНЫЙ — 1699₽/месяц</h4>
+                <div style="font-size: 0.9em; color: #666;">
+                    💬 Чат: 1370/день + приоритет • 🎨 Изображения: 350/день • 🏆 Midjourney: 80/мес • 🎭 DALL-E 3: 40/мес • 🎬 Видео: 52/мес • <strong style="color: #6f42c1;">🎬 VEO3: 1/мес ✅</strong> • 🎵 Музыка: 155/мес • 🔄 Face Swap: 50/мес • 📄 Документы: Безлимит • 🔍 Поиск: Безлимит
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            @media (max-width: 768px) {
+                .mobile-summary {
+                    display: block !important;
+                }
+            }
+        </style>
+    </div>Чат: 420/день<br>
                         🎨 Изображения: 100/день<br>
                         🏆 Midjourney: 20/месяц<br>
                         🎭 DALL-E 3: 10/месяц<br>
