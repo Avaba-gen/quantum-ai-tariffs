@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -9,17 +9,11 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #ffffff;
             min-height: 100vh;
-            animation: gradientShift 10s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-            50% { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
         }
         
         @keyframes fadeInUp {
@@ -59,35 +53,79 @@
             0% { background-position: -200px 0; }
             100% { background-position: calc(200px + 100%) 0; }
         }
-        .header {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            color: #333;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s ease-out, float 6s ease-in-out infinite;
-        }
+        
         .header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: 700;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
+        
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            animation: fadeInUp 1s ease-out, float 6s ease-in-out infinite;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
         .header p {
-            margin: 10px 0 0 0;
-            font-size: 1.2em;
-            opacity: 0.9;
+            margin: 15px 0 0 0;
+            font-size: 1.3em;
+            opacity: 0.95;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
         }
+        
         .section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 25px;
+            background: #ffffff;
+            padding: 30px;
             margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #667eea;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            border-left: 5px solid #007bff;
             animation: slideInLeft 0.8s ease-out;
             animation-fill-mode: both;
         }
@@ -99,13 +137,13 @@
         .section:nth-child(even) {
             animation-delay: 0.4s;
         }
+        
         .tariff-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             border: 2px solid #e9ecef;
             transition: all 0.5s ease;
             animation: fadeInUp 0.8s ease-out;
@@ -121,7 +159,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(0, 123, 255, 0.05), transparent);
             transform: rotate(45deg);
             transition: all 0.5s ease;
             opacity: 0;
@@ -133,9 +171,9 @@
         }
         
         .tariff-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            border-color: #667eea;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #007bff;
         }
         
         .tariff-card:nth-child(1) { animation-delay: 0.1s; }
@@ -143,54 +181,89 @@
         .tariff-card:nth-child(3) { animation-delay: 0.3s; }
         .tariff-card:nth-child(4) { animation-delay: 0.4s; }
         .tariff-card:nth-child(5) { animation-delay: 0.5s; }
+        
         .tariff-header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
+        
         .tariff-name {
-            font-size: 1.8em;
+            font-size: 2em;
             font-weight: 700;
             margin-bottom: 10px;
+            color: #212529;
         }
+        
         .tariff-price {
-            font-size: 2.2em;
+            font-size: 2.5em;
             font-weight: 800;
-            color: #667eea;
             margin-bottom: 5px;
         }
-        .tariff-description {
-            color: #666;
-            font-style: italic;
+        
+        .price-old {
+            text-decoration: line-through;
+            color: #6c757d;
+            font-size: 0.7em;
+            margin-right: 10px;
         }
+        
+        .price-new {
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        .discount-badge {
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.6em;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        .tariff-description {
+            color: #6c757d;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
         }
+        
         .feature-group {
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #007bff;
+            border: 1px solid #e9ecef;
         }
+        
         .feature-group h4 {
-            margin: 0 0 10px 0;
+            margin: 0 0 15px 0;
             color: #495057;
             font-weight: 600;
+            font-size: 1.1em;
         }
+        
         .feature-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+        
         .feature-list li {
-            padding: 5px 0;
+            padding: 8px 0;
             display: flex;
             align-items: center;
             animation: fadeInUp 0.5s ease-out;
             animation-fill-mode: both;
             transition: all 0.3s ease;
+            font-size: 0.95em;
         }
         
         .feature-list li:nth-child(1) { animation-delay: 0.1s; }
@@ -202,29 +275,31 @@
         
         .feature-list li:hover {
             transform: translateX(10px);
-            color: #667eea;
+            color: #007bff;
         }
+        
         .feature-list li::before {
             content: "✓";
             color: #28a745;
             font-weight: bold;
-            margin-right: 8px;
+            margin-right: 10px;
             transition: all 0.3s ease;
             animation: pulse 2s ease-in-out infinite;
         }
         
         .feature-list li:hover::before {
-            color: #667eea;
+            color: #007bff;
             transform: scale(1.2);
         }
+        
         .veo3-highlight {
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            background: linear-gradient(135deg, #28a745, #20c997);
             color: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
             text-align: center;
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
             animation: pulse 3s ease-in-out infinite;
             position: relative;
             overflow: hidden;
@@ -240,75 +315,66 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             animation: shimmer 2s ease-in-out infinite;
         }
+        
         .veo3-highlight h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.5em;
+            margin: 0 0 15px 0;
+            font-size: 1.6em;
         }
+        
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
+            background: #ffffff;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 25px 0;
             min-width: 800px;
-            font-size: 0.8em;
+            font-size: 0.85em;
             animation: fadeInUp 1s ease-out;
+            border: 1px solid #e9ecef;
         }
+        
         .table-container {
             width: 100%;
             overflow-x: auto;
-            margin: 20px 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 25px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             -webkit-overflow-scrolling: touch;
+            border: 1px solid #e9ecef;
         }
+        
         .table-container::-webkit-scrollbar {
             height: 12px;
         }
+        
         .table-container::-webkit-scrollbar-track {
             background: #f1f1f1;
             border-radius: 6px;
         }
+        
         .table-container::-webkit-scrollbar-thumb {
-            background: #667eea;
+            background: #007bff;
             border-radius: 6px;
             border: 2px solid #f1f1f1;
         }
+        
         .table-container::-webkit-scrollbar-thumb:hover {
-            background: #764ba2;
+            background: #0056b3;
         }
-        .feature-group {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-        .price-category {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-        .faq-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            border-left: 4px solid #667eea;
-        }
+        
         .comparison-table th,
         .comparison-table td {
-            padding: 8px 6px;
+            padding: 12px 8px;
             text-align: center;
             border-bottom: 1px solid #e9ecef;
-            font-size: 0.85em;
+            font-size: 0.9em;
             white-space: nowrap;
         }
+        
         .comparison-table th {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #007bff, #6f42c1);
             color: white;
             font-weight: 600;
             position: relative;
@@ -324,53 +390,70 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             animation: shimmer 3s ease-in-out infinite;
         }
+        
         .comparison-table tr {
             transition: all 0.3s ease;
         }
         
         .comparison-table tr:hover {
-            background: rgba(102, 126, 234, 0.1) !important;
+            background: rgba(0, 123, 255, 0.05) !important;
             transform: scale(1.02);
         }
+        
         .highlight {
-            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border-left: 4px solid #667eea;
-        }
-        .cost-breakdown {
-            background: #f1f3f4;
+            background: linear-gradient(120deg, #e3f2fd 0%, #f3e5f5 100%);
             padding: 20px;
             border-radius: 12px;
             margin: 20px 0;
+            border-left: 4px solid #007bff;
+            border: 1px solid #e1f5fe;
         }
+        
+        .cost-breakdown {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid #e9ecef;
+        }
+        
         .model-showcase {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
         }
+        
         .model-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-top: 4px solid #667eea;
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            border-top: 4px solid #007bff;
+            transition: all 0.3s ease;
         }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #007bff 0%, #6f42c1 100%);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             text-align: center;
             transition: all 0.3s ease;
             margin: 10px 5px;
             position: relative;
             overflow: hidden;
+            border: none;
+            cursor: pointer;
         }
         
         .btn::before {
@@ -390,32 +473,42 @@
         
         .btn:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+            background: linear-gradient(135deg, #6f42c1 0%, #007bff 100%);
         }
+        
         .price-table {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
         }
+        
         .price-category {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-        .faq-item {
-            background: white;
+            background: #ffffff;
             padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            border-left: 4px solid #007bff;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
+        
+        .faq-item {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
         .faq-item h4 {
-            margin: 0 0 10px 0;
+            margin: 0 0 15px 0;
             color: #495057;
+            font-size: 1.1em;
         }
+        
         @media (max-width: 768px) {
             .features {
                 grid-template-columns: 1fr;
@@ -426,6 +519,29 @@
             .price-table {
                 grid-template-columns: 1fr;
             }
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+        
+        .content-toc {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #007bff;
+            border: 1px solid #e9ecef;
+        }
+        
+        .content-toc a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .content-toc a:hover {
+            color: #0056b3;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -438,17 +554,17 @@
     <!-- ОГЛАВЛЕНИЕ -->
     <div class="section">
         <h2>📋 Содержание</h2>
-        <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; border-left: 4px solid #667eea;">
-            <div style="margin: 8px 0;"><a href="#free-tariff" style="color: #667eea; text-decoration: none; font-weight: 500;">🆓 Бесплатный тариф</a></div>
-            <div style="margin: 8px 0;"><a href="#starter-tariff" style="color: #667eea; text-decoration: none; font-weight: 500;">⭐ Стартовый тариф - 399₽</a></div>
-            <div style="margin: 8px 0;"><a href="#comfort-tariff" style="color: #667eea; text-decoration: none; font-weight: 500;">🏠 Комфорт тариф - 699₽</a></div>
-            <div style="margin: 8px 0;"><a href="#popular-tariff" style="color: #667eea; text-decoration: none; font-weight: 500;">🔥 Популярный тариф - 1199₽</a></div>
-            <div style="margin: 8px 0;"><a href="#maximum-tariff" style="color: #667eea; text-decoration: none; font-weight: 500;">💎 Максимальный тариф - 1699₽</a></div>
-            <div style="margin: 8px 0;"><a href="#neuron-packages" style="color: #667eea; text-decoration: none; font-weight: 500;">🧠 Покупка нейронов</a></div>
-            <div style="margin: 8px 0;"><a href="#ai-prices" style="color: #667eea; text-decoration: none; font-weight: 500;">⚡ Цены ИИ в нейронах</a></div>
-            <div style="margin: 8px 0;"><a href="#veo3-details" style="color: #667eea; text-decoration: none; font-weight: 500;">🎬 VEO3 подробно</a></div>
-            <div style="margin: 8px 0;"><a href="#comparison" style="color: #667eea; text-decoration: none; font-weight: 500;">📊 Сравнение тарифов</a></div>
-            <div style="margin: 8px 0;"><a href="#faq" style="color: #667eea; text-decoration: none; font-weight: 500;">❓ Частые вопросы</a></div>
+        <div class="content-toc">
+            <div style="margin: 8px 0;"><a href="#free-tariff">🆓 Бесплатный тариф</a></div>
+            <div style="margin: 8px 0;"><a href="#starter-tariff">⭐ Стартовый тариф - 399₽</a></div>
+            <div style="margin: 8px 0;"><a href="#comfort-tariff">🏠 Комфорт тариф - 699₽</a></div>
+            <div style="margin: 8px 0;"><a href="#popular-tariff">🔥 Популярный тариф - 1199₽</a></div>
+            <div style="margin: 8px 0;"><a href="#maximum-tariff">💎 Максимальный тариф - 1699₽</a></div>
+            <div style="margin: 8px 0;"><a href="#neuron-packages">🧠 Покупка нейронов</a></div>
+            <div style="margin: 8px 0;"><a href="#ai-prices">⚡ Цены ИИ в нейронах</a></div>
+            <div style="margin: 8px 0;"><a href="#veo3-details">🎬 VEO3 подробно</a></div>
+            <div style="margin: 8px 0;"><a href="#comparison">📊 Сравнение тарифов</a></div>
+            <div style="margin: 8px 0;"><a href="#faq">❓ Частые вопросы</a></div>
         </div>
     </div>
 
@@ -457,12 +573,12 @@
         <div class="tariff-header">
             <div class="tariff-name">🆓 БЕСПЛАТНЫЙ ТАРИФ</div>
             <div class="tariff-price">0₽/месяц</div>
-            <div class="tariff-description">Для знакомства с ИИ, учебы, редкого использования</div>
+            <div class="tariff-description">🧠 Стартовый бонус: 100 нейронов</div>
         </div>
         
         <div class="features">
             <div class="feature-group">
-                <h4>💬 Текстовые ИИ (100 запросов/неделю)</h4>
+                <h4>💬 Умный чат (100 вопросов/неделю)</h4>
                 <ul class="feature-list">
                     <li>GPT-4o Mini - быстрая модель для повседневных задач</li>
                     <li>DeepSeek V3 - отличный для кода и логических задач</li>
@@ -474,8 +590,8 @@
                 <h4>🎨 Изображения (12 картинок/неделю)</h4>
                 <ul class="feature-list">
                     <li>Kandinsky 3.1 - российский ИИ, понимает русский</li>
-                    <li>GPT-4o Images - качественные изображения от OpenAI</li>
                     <li>FLUX Schnell - быстрая генерация</li>
+                    <li>GPT-4o Images - качественные изображения от OpenAI</li>
                 </ul>
             </div>
             
@@ -484,7 +600,6 @@
                 <ul class="feature-list">
                     <li>Интернет-поиск: 5 запросов/день</li>
                     <li>Галерея работ: полный доступ</li>
-                    <li>Базовый анализ документов</li>
                 </ul>
             </div>
         </div>
@@ -494,28 +609,29 @@
     <div class="tariff-card" id="starter-tariff">
         <div class="tariff-header">
             <div class="tariff-name">⭐ СТАРТОВЫЙ ТАРИФ</div>
-            <div class="tariff-price">399₽/месяц</div>
-            <div class="tariff-description">Знакомство со всеми возможностями ИИ</div>
+            <div class="tariff-price">
+                <span class="price-old">599₽</span>
+                <span class="price-new">399₽/месяц</span>
+                <span class="discount-badge">-33%</span>
+            </div>
+            <div class="tariff-description">🎁 Попробуй ВСЕ возможности ИИ!</div>
         </div>
         
         <div class="features">
             <div class="feature-group">
-                <h4>💬 Текстовые ИИ (220 запросов/день)</h4>
+                <h4>💬 Чат с ИИ (220 запросов/день)</h4>
                 <ul class="feature-list">
-                    <li>GPT-4o Mini: 100 запросов/день</li>
-                    <li>GPT-4o: 20 запросов/день - самая мощная модель OpenAI</li>
-                    <li>DeepSeek V3: 100 запросов/день</li>
+                    <li>GPT-4o, GPT-4o Mini, DeepSeek V3</li>
+                    <li>Доступ к лучшим моделям</li>
                 </ul>
             </div>
             
             <div class="feature-group">
                 <h4>🎨 Изображения (65/день + премиум-бонусы)</h4>
                 <ul class="feature-list">
-                    <li>Kandinsky 3.1 (25/день)</li>
-                    <li>GPT-4o Images (15/день)</li>
-                    <li>FLUX Schnell (10/день)</li>
-                    <li><strong>Midjourney:</strong> 10 изображений/месяц</li>
-                    <li><strong>DALL-E 3:</strong> 5 изображений/месяц</li>
+                    <li>Все базовые модели</li>
+                    <li><strong>Midjourney:</strong> 10 изображений/месяц 🎁</li>
+                    <li><strong>DALL-E 3:</strong> 5 изображений/месяц 🎁</li>
                 </ul>
             </div>
             
@@ -543,48 +659,54 @@
     <div class="tariff-card" id="comfort-tariff">
         <div class="tariff-header">
             <div class="tariff-name">🏠 КОМФОРТ ТАРИФ</div>
-            <div class="tariff-price">699₽/месяц</div>
-            <div class="tariff-description">Оптимальный выбор для активных пользователей</div>
+            <div class="tariff-price">
+                <span class="price-old">899₽</span>
+                <span class="price-new">699₽/месяц</span>
+                <span class="discount-badge">-22%</span>
+            </div>
+            <div class="tariff-description">🔥 + Midjourney и премиум-функции!</div>
         </div>
         
         <div class="features">
             <div class="feature-group">
-                <h4>💬 Продвинутые ИИ (420 запросов/день)</h4>
+                <h4>💬 Продвинутый чат (420 запросов/день)</h4>
                 <ul class="feature-list">
-                    <li>GPT-4o: 50 запросов/день</li>
-                    <li>GPT-4o Mini: 200 запросов/день</li>
-                    <li>Claude 3.5 Sonnet: 30 запросов/день</li>
-                    <li>Gemini 1.5 Pro: 40 запросов/день</li>
-                    <li>DeepSeek V3: 200 запросов/день</li>
+                    <li>Все лучшие ИИ мира</li>
+                    <li>GPT-4o, Claude 3.5, Gemini Pro</li>
+                    <li>DeepSeek V3 для кода</li>
                 </ul>
             </div>
             
             <div class="feature-group">
-                <h4>🎨 Изображения (12 картинок/неделю)</h4>
+                <h4>🎨 Изображения (100/день + премиум)</h4>
                 <ul class="feature-list">
-                    <li>Kandinsky 3.1 - российский ИИ, понимает русский</li>
-                    <li>GPT-4o Images - качественные изображения от OpenAI</li>
-                    <li>FLUX Schnell - быстрая генерация</li>
+                    <li>Все доступные модели</li>
+                    <li><strong>Midjourney:</strong> 20 изображений/месяц 🎁</li>
+                    <li><strong>DALL-E 3:</strong> 10 изображений/месяц</li>
                 </ul>
             </div>
             
             <div class="feature-group">
-                <h4>🎵 Музыка + 🎬 Видео</h4>
+                <h4>🎵 Музыка расширенная</h4>
                 <ul class="feature-list">
-                    <li>MusicGen: 5 треков/неделю</li>
-                    <li>Udio Pro: 5 треков/месяц</li>
-                    <li>Suno V4 премиум: 3 песни/месяц</li>
-                    <li>Pika 2.2: 6 роликов/месяц</li>
-                    <li>Luma 3: 6 роликов/месяц</li>
-                    <li>Kling AI премиум: 3 ролика/месяц</li>
+                    <li>MusicGen: базовые возможности</li>
+                    <li><strong>Suno V4 премиум:</strong> 3 песни/месяц</li>
+                </ul>
+            </div>
+            
+            <div class="feature-group">
+                <h4>🎬 Видео (15 роликов/месяц)</h4>
+                <ul class="feature-list">
+                    <li>Pika 2.2, Kling AI, Luma</li>
+                    <li><strong>Kling AI премиум:</strong> 3 ролика/месяц</li>
                 </ul>
             </div>
             
             <div class="feature-group">
                 <h4>🔄 Дополнительные возможности</h4>
                 <ul class="feature-list">
-                    <li>Face Swap: 15 операций/месяц</li>
-                    <li>Анализ документов: 30 файлов/месяц</li>
+                    <li><strong>Замена лиц:</strong> 15 операций/месяц</li>
+                    <li>Анализ документов: 30/месяц</li>
                     <li>Галерея: до 1000 работ</li>
                 </ul>
             </div>
@@ -592,65 +714,63 @@
     </div>
 
     <!-- ПОПУЛЯРНЫЙ ТАРИФ -->
-    <div class="tariff-card" id="popular-tariff" style="border: 3px solid #ff6b6b;">
+    <div class="tariff-card" id="popular-tariff" style="border: 3px solid #28a745;">
         <div class="tariff-header">
             <div class="tariff-name">🔥 ПОПУЛЯРНЫЙ ТАРИФ</div>
-            <div class="tariff-price">1199₽/месяц</div>
-            <div class="tariff-description">Включает VEO3 - революционное видео от Google</div>
+            <div class="tariff-price">
+                <span class="price-old">1499₽</span>
+                <span class="price-new">1199₽/месяц</span>
+                <span class="discount-badge">-20%</span>
+            </div>
+            <div class="tariff-description">⭐ + VEO3 HOLLYWOOD качество БЕСПЛАТНО!</div>
         </div>
         
         <div class="veo3-highlight">
-            <h3>🎬✨ VEO3 БОНУС: Экономьте 600₽ каждый месяц!</h3>
-            <p>Один ролик VEO3 обычно стоит 600 нейронов</p>
+            <h3>🎬 VEO3 БОНУС: Экономьте 600₽ каждый месяц на Hollywood-качестве!</h3>
+            <p>Самый крутой ИИ для видео от Google! Создает видео как в Голливуде!</p>
         </div>
         
         <div class="features">
             <div class="feature-group">
-                <h4>💬 Все лучшие ИИ мира (830 запросов/день)</h4>
+                <h4>💬 Все ИИ мира (830 запросов/день)</h4>
                 <ul class="feature-list">
-                    <li>GPT-4o: 80 запросов/день</li>
-                    <li>GPT-4o Mini: 300 запросов/день</li>
-                    <li>Claude 3.5 Sonnet: 60 запросов/день</li>
-                    <li>Gemini 1.5 Pro: 70 запросов/день</li>
-                    <li>DeepSeek V3: 300 запросов/день</li>
+                    <li>Безлимитный доступ ко всем моделям</li>
+                    <li>GPT-4o, Claude 3.5, Gemini Pro</li>
+                    <li>DeepSeek V3 для разработки</li>
                 </ul>
             </div>
             
             <div class="feature-group">
-                <h4>🎨 Профессиональные изображения (170/день)</h4>
+                <h4>🎨 Изображения (170/день + VEO3)</h4>
                 <ul class="feature-list">
-                    <li>Kandinsky 3.1 (100/день)</li>
+                    <li>Все модели изображений</li>
                     <li><strong>Midjourney:</strong> 35 изображений/месяц</li>
                     <li><strong>DALL-E 3:</strong> 20 изображений/месяц</li>
-                    <li><strong>FLUX Pro:</strong> 15 изображений/месяц</li>
                 </ul>
             </div>
             
             <div class="feature-group">
-                <h4>🎵 Создание музыки</h4>
+                <h4>🎵 Музыка (42 трека/месяц)</h4>
                 <ul class="feature-list">
-                    <li>MusicGen: 10/неделю</li>
-                    <li>Udio Pro: 10/месяц</li>
-                    <li>Suno V4 премиум: 8 песен/месяц</li>
+                    <li>MusicGen: расширенный доступ</li>
+                    <li><strong>Suno V4 премиум:</strong> 8 песен/месяц</li>
                 </ul>
             </div>
             
             <div class="feature-group">
-                <h4>🎬 Создание видео (включая VEO3!)</h4>
+                <h4>🎬 Видео (26 роликов/месяц + VEO3)</h4>
                 <ul class="feature-list">
-                    <li>Pika 2.2: 10 роликов/месяц</li>
-                    <li>Luma 3: 10 роликов/месяц</li>
-                    <li>Kling AI премиум: 6 роликов/месяц</li>
-                    <li><strong>VEO3: 1 видео/месяц БЕСПЛАТНО 🎬✨</strong></li>
+                    <li>Pika 2.2, Kling AI, Luma</li>
+                    <li><strong>VEO3: 1 ролик/месяц БЕСПЛАТНО</strong> 🎬✨</li>
                 </ul>
             </div>
             
             <div class="feature-group">
                 <h4>🔄 Расширенные функции</h4>
                 <ul class="feature-list">
-                    <li>Face Swap: 25 операций/месяц</li>
+                    <li>Замена лиц: 25 операций/месяц</li>
                     <li>Документы: 100/месяц</li>
-                    <li>Поиск: безлимит</li>
+                    <li><strong>Поиск: безлимит</strong></li>
                     <li>Галерея: до 2000 работ</li>
                 </ul>
             </div>
@@ -658,63 +778,61 @@
     </div>
 
     <!-- МАКСИМАЛЬНЫЙ ТАРИФ -->
-    <div class="tariff-card" id="maximum-tariff" style="border: 3px solid #764ba2;">
+    <div class="tariff-card" id="maximum-tariff" style="border: 3px solid #6f42c1;">
         <div class="tariff-header">
             <div class="tariff-name">💎 МАКСИМАЛЬНЫЙ ТАРИФ</div>
-            <div class="tariff-price">1699₽/месяц</div>
-            <div class="tariff-description">Для профессионалов и команд</div>
+            <div class="tariff-price">
+                <span class="price-old">2499₽</span>
+                <span class="price-new">1699₽/месяц</span>
+                <span class="discount-badge">-32%</span>
+            </div>
+            <div class="tariff-description">🚀 Все ИИ + приоритет + VIP-поддержка!</div>
         </div>
         
         <div class="features">
             <div class="feature-group">
-                <h4>💬 Максимальные лимиты ИИ (1370 запросов/день)</h4>
+                <h4>💬 Все ИИ + приоритет (1370 запросов/день)</h4>
                 <ul class="feature-list">
-                    <li>GPT-4o: 150 запросов/день</li>
-                    <li>GPT-4o Mini: 500 запросов/день</li>
-                    <li>Claude 3.5 Sonnet: 100 запросов/день</li>
-                    <li>Gemini 1.5 Pro: 120 запросов/день</li>
-                    <li>DeepSeek V3: 500 запросов/день</li>
+                    <li>Максимальные лимиты на все модели</li>
                     <li><strong>Приоритетная обработка</strong></li>
+                    <li>Все чат-модели без ограничений</li>
                 </ul>
             </div>
             
             <div class="feature-group">
-                <h4>🎨 Топовые изображения (350/день)</h4>
+                <h4>🎨 Изображения (350/день)</h4>
                 <ul class="feature-list">
-                    <li>Kandinsky 3.1 (200/день)</li>
-                    <li><strong>DALL-E 3:</strong> 40 изображений/месяц ⭐</li>
+                    <li>Все модели без ограничений</li>
+                    <li><strong>DALL-E 3:</strong> 40 изображений/месяц</li>
                     <li><strong>Midjourney:</strong> 80 изображений/месяц</li>
-                    <li><strong>FLUX Pro:</strong> 30 изображений/месяц</li>
                 </ul>
             </div>
             
             <div class="feature-group">
-                <h4>🎵 Профессиональная музыка</h4>
+                <h4>🎵 Музыка (155 треков/месяц)</h4>
                 <ul class="feature-list">
-                    <li>MusicGen: 30 треков/неделю</li>
-                    <li>Udio Pro: 20 треков/месяц</li>
-                    <li>Suno V4 премиум: 15 песен/месяц</li>
+                    <li>Все премиум-модели</li>
+                    <li>Suno V4 премиум: без ограничений</li>
                 </ul>
             </div>
             
             <div class="feature-group">
-                <h4>🎬 Премиум видео</h4>
+                <h4>🎬 Видео (52 ролика/месяц + VEO3)</h4>
                 <ul class="feature-list">
-                    <li>Pika 2.2: 20 роликов/месяц</li>
-                    <li>Luma 3: 20 роликов/месяц</li>
-                    <li>Kling AI премиум: 12 роликов/месяц</li>
-                    <li><strong>VEO3: 1 видео/месяц БЕСПЛАТНО 🎬✨</strong></li>
+                    <li>Все модели видео</li>
+                    <li><strong>VEO3: 1 ролик/месяц</strong></li>
+                    <li>Премиум видео: без ограничений</li>
                 </ul>
             </div>
             
             <div class="feature-group">
                 <h4>🔄 VIP возможности</h4>
                 <ul class="feature-list">
-                    <li>Face Swap: 50 операций/месяц</li>
-                    <li>Документы: безлимит</li>
-                    <li>Поиск: безлимит</li>
-                    <li>Галерея: безлимит + резервные копии</li>
-                    <li>Техподдержка: приоритетная</li>
+                    <li>Замена лиц: 50 операций/месяц</li>
+                    <li><strong>Документы: безлимит</strong></li>
+                    <li><strong>Поиск: безлимит</strong></li>
+                    <li><strong>Галерея: безлимит + резервные копии</strong></li>
+                    <li><strong>Поддержка: приоритетная</strong></li>
                 </ul>
             </div>
         </div>
@@ -727,31 +845,38 @@
         
         <div class="model-showcase">
             <div class="model-card">
-                <h3>💰 Стартовый</h3>
-                <div style="font-size: 1.5em; color: #667eea; font-weight: bold;">550 нейронов — 499₽</div>
-                <div style="color: #28a745; font-weight: bold;">Бонус +50 нейронов</div>
-                <p>Для знакомства с платными функциями</p>
+                <h3>🎯 Мини</h3>
+                <div style="font-size: 1.5em; color: #007bff; font-weight: bold;">250 нейронов — 249₽</div>
+                <div style="color: #28a745; font-weight: bold;">Бонус +25 нейронов = 275 всего</div>
+                <p>Для первого знакомства с платными функциями</p>
             </div>
             
             <div class="model-card">
+                <h3>⚡ Базовый</h3>
+                <div style="font-size: 1.5em; color: #007bff; font-weight: bold;">500 нейронов — 499₽</div>
+                <div style="color: #28a745; font-weight: bold;">Бонус +50 нейронов = 550 всего</div>
+                <p>Оптимальный старт в мир ИИ</p>
+            </div>
+            
+            <div class="model-card" style="border-top-color: #28a745;">
                 <h3>🔥 Популярный</h3>
-                <div style="font-size: 1.5em; color: #667eea; font-weight: bold;">1400 нейронов — 999₽</div>
-                <div style="color: #28a745; font-weight: bold;">Бонус +400 нейронов</div>
-                <p>Оптимальный баланс цены и количества</p>
+                <div style="font-size: 1.5em; color: #007bff; font-weight: bold;">1000 нейронов — 999₽</div>
+                <div style="color: #28a745; font-weight: bold;">Бонус +100 нейронов = 1100 всего</div>
+                <p>Самый выбираемый пакет</p>
             </div>
             
             <div class="model-card">
                 <h3>💎 Выгодный</h3>
-                <div style="font-size: 1.5em; color: #667eea; font-weight: bold;">3000 нейронов — 1999₽</div>
-                <div style="color: #28a745; font-weight: bold;">Бонус +1000 нейронов</div>
+                <div style="font-size: 1.5em; color: #007bff; font-weight: bold;">2000 нейронов — 1999₽</div>
+                <div style="color: #28a745; font-weight: bold;">Бонус +300 нейронов = 2300 всего</div>
                 <p>Максимальная экономия на больших пакетах</p>
             </div>
             
             <div class="model-card">
-                <h3>🚀 Профессиональный</h3>
-                <div style="font-size: 1.5em; color: #667eea; font-weight: bold;">7000 нейронов — 3999₽</div>
-                <div style="color: #28a745; font-weight: bold;">Бонус +3000 нейронов</div>
-                <p>Для интенсивного использования</p>
+                <h3>🚀 Премиум</h3>
+                <div style="font-size: 1.5em; color: #007bff; font-weight: bold;">4000 нейронов — 3999₽</div>
+                <div style="color: #28a745; font-weight: bold;">Бонус +400 нейронов = 4400 всего</div>
+                <p>Для профессионалов и интенсивного использования</p>
             </div>
         </div>
     </div>
@@ -763,53 +888,54 @@
         <div class="price-table">
             <div class="price-category">
                 <h4>💬 Текстовые ИИ</h4>
-                <ul>
-                    <li>GPT-4o Mini: <strong>1 нейрон</strong></li>
-                    <li>DeepSeek V3: <strong>1 нейрон</strong></li>
-                    <li>Gemini 1.5 Pro: <strong>3 нейрона</strong></li>
-                    <li>GPT-4o: <strong>4 нейрона</strong></li>
-                    <li>Claude 3.5 Sonnet: <strong>5 нейронов</strong></li>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 5px 0;">GPT-4o Mini: <strong>1 нейрон</strong></li>
+                    <li style="padding: 5px 0;">DeepSeek V3: <strong>1 нейрон</strong></li>
+                    <li style="padding: 5px 0;">Gemini 2.0 Flash: <strong>1 нейрон</strong></li>
+                    <li style="padding: 5px 0;">Gemini Pro: <strong>3 нейрона</strong></li>
+                    <li style="padding: 5px 0;">GPT-4o: <strong>4 нейрона</strong></li>
+                    <li style="padding: 5px 0;">Claude 3.5 Sonnet: <strong>5 нейронов</strong></li>
                 </ul>
             </div>
             
             <div class="price-category">
                 <h4>🎨 Изображения</h4>
-                <ul>
-                    <li>Kandinsky 3.1: <strong>1 нейрон</strong></li>
-                    <li>FLUX Schnell: <strong>2 нейрона</strong></li>
-                    <li>Stable Diffusion: <strong>3 нейрона</strong></li>
-                    <li>FLUX Dev: <strong>6 нейронов</strong></li>
-                    <li>Midjourney: <strong>8 нейронов</strong></li>
-                    <li>DALL-E 3: <strong>10 нейронов</strong></li>
-                    <li>FLUX Pro: <strong>15 нейронов</strong></li>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 5px 0;">Kandinsky 3.1: <strong>1 нейрон</strong></li>
+                    <li style="padding: 5px 0;">FLUX Schnell: <strong>2 нейрона</strong></li>
+                    <li style="padding: 5px 0;">Stable Diffusion: <strong>3 нейрона</strong></li>
+                    <li style="padding: 5px 0;">FLUX Dev: <strong>6 нейронов</strong></li>
+                    <li style="padding: 5px 0;">DALL-E 3: <strong>6 нейронов</strong></li>
+                    <li style="padding: 5px 0;">Midjourney: <strong>8 нейронов</strong></li>
+                    <li style="padding: 5px 0;">FLUX Pro: <strong>15 нейронов</strong></li>
                 </ul>
             </div>
             
             <div class="price-category">
                 <h4>🎵 Музыка</h4>
-                <ul>
-                    <li>Suno V4: <strong>8 нейронов</strong></li>
-                    <li>Udio Pro: <strong>12 нейронов</strong></li>
-                    <li>MusicGen: <strong>20 нейронов</strong></li>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 5px 0;">MusicGen: <strong>3 нейрона</strong></li>
+                    <li style="padding: 5px 0;">Suno V4: <strong>8 нейронов</strong></li>
+                    <li style="padding: 5px 0;">Udio Pro: <strong>8 нейронов</strong></li>
                 </ul>
             </div>
             
             <div class="price-category">
                 <h4>🎬 Видео</h4>
-                <ul>
-                    <li>Pika 2.2: <strong>25 нейронов</strong> (5 сек)</li>
-                    <li>Kling AI: <strong>30 нейронов</strong> (5 сек)</li>
-                    <li>Luma Dream: <strong>40 нейронов</strong> (5 сек)</li>
-                    <li><strong>VEO3: 600 нейронов</strong> (8 сек + озвучка)</li>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 5px 0;">Pika 2.2: <strong>25 нейронов</strong> (5 сек)</li>
+                    <li style="padding: 5px 0;">Luma: <strong>25 нейронов</strong> (5 сек)</li>
+                    <li style="padding: 5px 0;">Kling AI: <strong>30 нейронов</strong> (5 сек)</li>
+                    <li style="padding: 5px 0;"><strong>VEO3: 600 нейронов</strong> (8 сек + озвучка)</li>
                 </ul>
             </div>
             
             <div class="price-category">
                 <h4>🔄 Дополнительно</h4>
-                <ul>
-                    <li>Поиск в интернете: <strong>1 нейрон</strong></li>
-                    <li>Face Swap: <strong>3 нейрона</strong></li>
-                    <li>Анализ документа: <strong>8 нейронов</strong></li>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 5px 0;">Поиск в интернете: <strong>1 нейрон</strong></li>
+                    <li style="padding: 5px 0;">Face Swap: <strong>3 нейрона</strong></li>
+                    <li style="padding: 5px 0;">Анализ документа: <strong>8 нейронов</strong></li>
                 </ul>
             </div>
         </div>
@@ -841,9 +967,9 @@
             
             <h3>🎥 Более доступные альтернативы:</h3>
             <ul>
-                <li><strong>Kling AI:</strong> 30 нейронов за 5 сек - отличное качество</li>
                 <li><strong>Pika 2.2:</strong> 25 нейронов за 5 сек - креативные эффекты</li>
-                <li><strong>Luma Dream:</strong> 40 нейронов за 5 сек - хороший баланс</li>
+                <li><strong>Luma:</strong> 25 нейронов за 5 сек - хороший баланс</li>
+                <li><strong>Kling AI:</strong> 30 нейронов за 5 сек - отличное качество</li>
             </ul>
             <p><strong>Рекомендация:</strong> Начните с бюджетных вариантов, VEO3 используйте для особых проектов!</p>
         </div>
@@ -914,7 +1040,7 @@
                         <td>26/мес</td>
                         <td>52/мес</td>
                     </tr>
-                    <tr style="background: #fff3cd;">
+                    <tr style="background: #e8f5e8;">
                         <td><strong>🎬 VEO3</strong></td>
                         <td><strong>❌</strong></td>
                         <td><strong>❌</strong></td>
@@ -926,7 +1052,7 @@
                         <td>🎵 Музыка</td>
                         <td>❌</td>
                         <td>5/мес</td>
-                        <td>23/мес</td>
+                        <td>15/мес</td>
                         <td>42/мес</td>
                         <td>155/мес</td>
                     </tr>
@@ -940,7 +1066,7 @@
                     </tr>
                     <tr>
                         <td>📄 Документы</td>
-                        <td>5/мес</td>
+                        <td>❌</td>
                         <td>10/мес</td>
                         <td>30/мес</td>
                         <td>100/мес</td>
@@ -958,9 +1084,9 @@
             </table>
         </div>
         
-        <div style="font-size: 0.9em; color: #666; margin-top: 15px; text-align: center; padding: 10px; background: #e3f2fd; border-radius: 8px;">
+        <div style="font-size: 0.9em; color: #666; margin-top: 15px; text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; border: 1px solid #e9ecef;">
             📱 <strong>Совет:</strong> На мобильном пролистайте таблицу влево-вправо
-            </div>
+        </div>
     </div>
 
     <!-- ЧАСТЫЕ ВОПРОСЫ -->
@@ -998,71 +1124,45 @@
 
     <!-- РЕКОМЕНДАЦИИ -->
     <div class="section">
-        <h2>🎯 Рекомендации по выбору</h2>
+        <h2>🎯 Какой тариф выбрать?</h2>
         
         <div class="highlight">
             <h3>👶 Новичкам:</h3>
+            <p><strong>Бесплатный → Стартовый</strong></p>
             <ul>
-                <li>Начните с <strong>Бесплатного</strong> тарифа для знакомства</li>
-                <li>Попробуйте все основные функции</li>
-                <li>При активном использовании переходите на <strong>Стартовый</strong></li>
+                <li>Изучите возможности ИИ</li>
+                <li>Попробуйте все функции</li>
+                <li>Определитесь с потребностями</li>
             </ul>
         </div>
         
         <div class="highlight">
             <h3>🔥 Активным пользователям:</h3>
+            <p><strong>Комфорт (без VEO3) или Популярный (с VEO3)</strong></p>
             <ul>
-                <li><strong>Комфорт</strong> - для ежедневного использования без VEO3</li>
-                <li><strong>Популярный</strong> - лучшее соотношение цена/качество + VEO3</li>
-                <li><strong>Максимальный</strong> - для профессионалов и команд</li>
+                <li>Регулярное создание контента</li>
+                <li>Работа с разными ИИ</li>
+                <li>Премиум-функции</li>
             </ul>
         </div>
         
         <div class="highlight">
-            <h3>💡 Специальные случаи:</h3>
+            <h3>💼 Для бизнеса:</h3>
+            <p><strong>Максимальный</strong></p>
             <ul>
-                <li><strong>Для контент-мейкеров:</strong> "Популярный" - включает VEO3 и все инструменты</li>
-                <li><strong>Для программистов:</strong> "Комфорт" - достаточно DeepSeek V3 и Claude</li>
-                <li><strong>Для художников:</strong> "Популярный" - максимум Midjourney и DALL-E 3</li>
-                <li><strong>Для бизнеса:</strong> "Максимальный" - безлимиты и приоритетная поддержка</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- ЭКОНОМИЧЕСКИЙ АНАЛИЗ -->
-    <div class="section">
-        <h2>📈 Экономический анализ</h2>
-        
-        <div class="cost-breakdown">
-            <h3>💰 Себестоимость vs Цена:</h3>
-            <p><strong>Почему наши цены справедливы:</strong></p>
-            <ul>
-                <li>Реальная себестоимость API от OpenAI, Google, Anthropic включена в расчет</li>
-                <li>Наценка 50-80% покрывает серверы, разработку и поддержку</li>
-                <li>VEO3 имеет минимальную наценку 25% из-за высокой себестоимости Google</li>
-            </ul>
-            
-            <p><strong>Сравнение с конкурентами:</strong></p>
-            <ul>
-                <li>ChatGPT Plus: $20/месяц (≈1900₽) только за текст</li>
-                <li>Midjourney: $10/месяц (≈950₽) только за изображения</li>
-                <li><strong>У нас:</strong> все ИИ в одном месте от 399₽/месяц</li>
+                <li>Приоритетная обработка</li>
+                <li>Безлимитные функции</li>
+                <li>VIP-поддержка</li>
             </ul>
         </div>
         
         <div class="highlight">
-            <h3>📊 Выгода тарифов:</h3>
-            <p><strong>Стартовый тариф (399₽):</strong></p>
+            <h3>📊 По профессиям:</h3>
             <ul>
-                <li>При покупке нейронами аналогичное использование стоило бы ≈600₽</li>
-                <li><strong>Экономия: 33%</strong></li>
-            </ul>
-            
-            <p><strong>Популярный тариф (1199₽):</strong></p>
-            <ul>
-                <li>Включает 1 VEO3 (600₽) + остальные функции</li>
-                <li>При покупке нейронами стоило бы ≈1600₽</li>
-                <li><strong>Экономия: 25% + бесплатный VEO3</strong></li>
+                <li><strong>🎨 Дизайнеры:</strong> Популярный (Midjourney + DALL-E 3)</li>
+                <li><strong>💻 Программисты:</strong> Комфорт (Claude + DeepSeek для кода)</li>
+                <li><strong>📹 Блогеры:</strong> Популярный (VEO3 для Hollywood-видео)</li>
+                <li><strong>🏢 Компании:</strong> Максимальный (все возможности)</li>
             </ul>
         </div>
     </div>
@@ -1076,7 +1176,7 @@
         <a href="https://t.me/QuantumAI_Support" class="btn">💬 Поддержка</a>
         <a href="https://t.me/QuantumAI_News" class="btn">📢 Новости</a>
         
-        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+        <div style="margin-top: 30px; padding: 25px; background: #f8f9fa; border-radius: 15px; border: 1px solid #e9ecef;">
             <p><strong>Quantum AI Bot</strong> - самый полный ИИ-помощник в Telegram!</p>
             <p>Единственный бот с эксклюзивным доступом к VEO3 🎬✨</p>
         </div>
