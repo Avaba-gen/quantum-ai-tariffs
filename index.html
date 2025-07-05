@@ -127,7 +127,8 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin: 20px 0;
-            min-width: 600px;
+            min-width: 800px;
+            font-size: 0.8em;
         }
         .table-container {
             width: 100%;
@@ -135,27 +136,49 @@
             margin: 20px 0;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            -webkit-overflow-scrolling: touch;
         }
         .table-container::-webkit-scrollbar {
-            height: 8px;
+            height: 12px;
         }
         .table-container::-webkit-scrollbar-track {
             background: #f1f1f1;
-            border-radius: 4px;
+            border-radius: 6px;
         }
         .table-container::-webkit-scrollbar-thumb {
             background: #667eea;
-            border-radius: 4px;
+            border-radius: 6px;
+            border: 2px solid #f1f1f1;
         }
         .table-container::-webkit-scrollbar-thumb:hover {
             background: #764ba2;
         }
+        .feature-group {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .price-category {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .faq-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
         .comparison-table th,
         .comparison-table td {
-            padding: 12px;
+            padding: 8px 6px;
             text-align: center;
             border-bottom: 1px solid #e9ecef;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            white-space: nowrap;
         }
         .comparison-table th {
             background: #667eea;
@@ -668,16 +691,17 @@
     <div class="section" id="comparison">
         <h2>📊 Сравнительная таблица тарифов</h2>
         
-        <div class="table-container">
+        <!-- Версия для десктопа -->
+        <div class="table-container" style="display: block;">
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th>Функция</th>
-                        <th>Бесплатный</th>
-                        <th>Стартовый</th>
-                        <th>Комфорт</th>
-                        <th>Популярный</th>
-                        <th>Максимальный</th>
+                        <th style="min-width: 120px;">Функция</th>
+                        <th style="min-width: 80px;">Бесплатный</th>
+                        <th style="min-width: 80px;">Стартовый</th>
+                        <th style="min-width: 80px;">Комфорт</th>
+                        <th style="min-width: 90px;">Популярный</th>
+                        <th style="min-width: 90px;">Максимальный</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -690,8 +714,8 @@
                         <td>1699₽</td>
                     </tr>
                     <tr>
-                        <td>💬 Чат с ИИ</td>
-                        <td>100/неделю</td>
+                        <td>💬 Чат</td>
+                        <td>100/нед</td>
                         <td>220/день</td>
                         <td>420/день</td>
                         <td>830/день</td>
@@ -699,7 +723,7 @@
                     </tr>
                     <tr>
                         <td>🎨 Изображения</td>
-                        <td>12/неделю</td>
+                        <td>12/нед</td>
                         <td>65/день</td>
                         <td>100/день</td>
                         <td>170/день</td>
@@ -708,57 +732,57 @@
                     <tr>
                         <td>🏆 Midjourney</td>
                         <td>❌</td>
-                        <td>10/месяц</td>
-                        <td>20/месяц</td>
-                        <td>35/месяц</td>
-                        <td>80/месяц</td>
+                        <td>10/мес</td>
+                        <td>20/мес</td>
+                        <td>35/мес</td>
+                        <td>80/мес</td>
                     </tr>
                     <tr>
                         <td>🎭 DALL-E 3</td>
                         <td>❌</td>
-                        <td>5/месяц</td>
-                        <td>10/месяц</td>
-                        <td>20/месяц</td>
-                        <td>40/месяц</td>
+                        <td>5/мес</td>
+                        <td>10/мес</td>
+                        <td>20/мес</td>
+                        <td>40/мес</td>
                     </tr>
                     <tr>
-                        <td>🎬 Видео (базовое)</td>
+                        <td>🎬 Видео</td>
                         <td>❌</td>
-                        <td>3/месяц</td>
-                        <td>15/месяц</td>
-                        <td>26/месяц</td>
-                        <td>52/месяц</td>
+                        <td>3/мес</td>
+                        <td>15/мес</td>
+                        <td>26/мес</td>
+                        <td>52/мес</td>
                     </tr>
                     <tr style="background: #fff3cd;">
                         <td><strong>🎬 VEO3</strong></td>
                         <td><strong>❌</strong></td>
                         <td><strong>❌</strong></td>
                         <td><strong>❌</strong></td>
-                        <td><strong>✅ 1/месяц</strong></td>
-                        <td><strong>✅ 1/месяц</strong></td>
+                        <td><strong>✅ 1/мес</strong></td>
+                        <td><strong>✅ 1/мес</strong></td>
                     </tr>
                     <tr>
                         <td>🎵 Музыка</td>
                         <td>❌</td>
-                        <td>5/месяц</td>
-                        <td>23/месяц</td>
-                        <td>42/месяц</td>
-                        <td>155/месяц</td>
+                        <td>5/мес</td>
+                        <td>23/мес</td>
+                        <td>42/мес</td>
+                        <td>155/мес</td>
                     </tr>
                     <tr>
                         <td>🔄 Face Swap</td>
                         <td>❌</td>
                         <td>❌</td>
-                        <td>15/месяц</td>
-                        <td>25/месяц</td>
-                        <td>50/месяц</td>
+                        <td>15/мес</td>
+                        <td>25/мес</td>
+                        <td>50/мес</td>
                     </tr>
                     <tr>
                         <td>📄 Документы</td>
-                        <td>5/месяц</td>
-                        <td>10/месяц</td>
-                        <td>30/месяц</td>
-                        <td>100/месяц</td>
+                        <td>5/мес</td>
+                        <td>10/мес</td>
+                        <td>30/мес</td>
+                        <td>100/мес</td>
                         <td>Безлимит</td>
                     </tr>
                     <tr>
@@ -772,9 +796,92 @@
                 </tbody>
             </table>
         </div>
-        <div style="font-size: 0.9em; color: #666; margin-top: 10px;">
-            💡 <em>Прокрутите таблицу влево-вправо на мобильном устройстве</em>
+        
+        <!-- Мобильная версия в виде карточек -->
+        <div style="display: none;" class="mobile-comparison">
+            <div style="display: grid; gap: 15px; margin: 20px 0;">
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #28a745;">
+                    <h4 style="margin: 0 0 10px 0; color: #28a745;">🆓 БЕСПЛАТНЫЙ — 0₽/месяц</h4>
+                    <div style="font-size: 0.9em; line-height: 1.4;">
+                        💬 Чат: 100/неделю<br>
+                        🎨 Изображения: 12/неделю<br>
+                        🔍 Поиск: 5/день<br>
+                        📄 Документы: 5/месяц
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ffc107;">
+                    <h4 style="margin: 0 0 10px 0; color: #ffc107;">⭐ СТАРТОВЫЙ — 399₽/месяц</h4>
+                    <div style="font-size: 0.9em; line-height: 1.4;">
+                        💬 Чат: 220/день<br>
+                        🎨 Изображения: 65/день<br>
+                        🏆 Midjourney: 10/месяц<br>
+                        🎭 DALL-E 3: 5/месяц<br>
+                        🎬 Видео: 3/месяц<br>
+                        🎵 Музыка: 5/месяц
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #17a2b8;">
+                    <h4 style="margin: 0 0 10px 0; color: #17a2b8;">🏠 КОМФОРТ — 699₽/месяц</h4>
+                    <div style="font-size: 0.9em; line-height: 1.4;">
+                        💬 Чат: 420/день<br>
+                        🎨 Изображения: 100/день<br>
+                        🏆 Midjourney: 20/месяц<br>
+                        🎭 DALL-E 3: 10/месяц<br>
+                        🎬 Видео: 15/месяц<br>
+                        🎵 Музыка: 23/месяц<br>
+                        🔄 Face Swap: 15/месяц
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #dc3545;">
+                    <h4 style="margin: 0 0 10px 0; color: #dc3545;">🔥 ПОПУЛЯРНЫЙ — 1199₽/месяц</h4>
+                    <div style="font-size: 0.9em; line-height: 1.4;">
+                        💬 Чат: 830/день<br>
+                        🎨 Изображения: 170/день<br>
+                        🏆 Midjourney: 35/месяц<br>
+                        🎭 DALL-E 3: 20/месяц<br>
+                        🎬 Видео: 26/месяц<br>
+                        <strong style="color: #dc3545;">🎬 VEO3: 1/месяц ✅</strong><br>
+                        🎵 Музыка: 42/месяц<br>
+                        🔄 Face Swap: 25/месяц<br>
+                        🔍 Поиск: Безлимит
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #6f42c1;">
+                    <h4 style="margin: 0 0 10px 0; color: #6f42c1;">💎 МАКСИМАЛЬНЫЙ — 1699₽/месяц</h4>
+                    <div style="font-size: 0.9em; line-height: 1.4;">
+                        💬 Чат: 1370/день + приоритет<br>
+                        🎨 Изображения: 350/день<br>
+                        🏆 Midjourney: 80/месяц<br>
+                        🎭 DALL-E 3: 40/месяц<br>
+                        🎬 Видео: 52/месяц<br>
+                        <strong style="color: #6f42c1;">🎬 VEO3: 1/месяц ✅</strong><br>
+                        🎵 Музыка: 155/месяц<br>
+                        🔄 Face Swap: 50/месяц<br>
+                        📄 Документы: Безлимит<br>
+                        🔍 Поиск: Безлимит
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <div style="font-size: 0.9em; color: #666; margin-top: 15px; text-align: center; padding: 10px; background: #e3f2fd; border-radius: 8px;">
+            📱 <strong>Для мобильных:</strong> Пролистайте таблицу пальцем влево-вправо для просмотра всех колонок
+        </div>
+        
+        <style>
+            @media (max-width: 768px) {
+                .table-container {
+                    display: block !important;
+                }
+                .mobile-comparison {
+                    display: block !important;
+                }
+            }
+        </style>
     </div>
 
     <!-- ЧАСТЫЕ ВОПРОСЫ -->
