@@ -1,55 +1,4 @@
-<div class="tariff-header">
-            <div class="tariff-name">🔥 ПОПУЛЯРНЫЙ ТАРИФ</div>
-            <div class="tariff-price">
-                <span class="price-old">2999₽</span>
-                <span class="price-new">1699₽/месяц</span>
-                <span class="discount-badge">-43%</span>
-            </div>
-            <div class="tariff-description">⭐ + VEO3 HOLLYWOOD качество БЕСПЛАТНО!</div>
-        </div>
-        
-        <div class="veo3-highlight">
-            <h3>🎬 VEO3 БОНУС: Экономьте 350₽ каждый месяц на Hollywood-качестве!</h3>
-            <p>Самый крутой ИИ для видео от Google! Создает видео как в Голливуде!</p>
-        </div>
-        
-        <div class="features">
-            <div class="feature-group">
-                <h4>💬 Продвинутый чат (1500 запросов/месяц)</h4>
-                <ul class="feature-list">
-                    <li>GPT-4o: 300 запросов/месяц</li>
-                    <li>GPT-4o Mini: 400 запросов/месяц</li>
-                    <li>DeepSeek V3: 400 запросов/месяц</li>
-                    <li>Gemini 1.5 Pro: 200 запросов/месяц</li>
-                    <li>Claude 3.5 Sonnet: 200 запросов/месяц</li>
-                </ul>
-            </div>
-            
-            <div class="feature-group">
-                <h4>🎨 Изображения (200/месяц)</h4>
-                <ul class="feature-list">
-                    <li>Kandinsky 3.1: 100/месяц</li>
-                    <li>FLUX Schnell: 70/месяц</li>
-                    <li>FLUX Pro: 20/месяц</li>
-                    <li><strong>Stable Diffusion 3:</strong> 6 изображений/месяц 🎁</li>
-                    <li><strong>Midjourney:</strong> 4 изображения/месяц 🎁</li>
-                </ul>
-            </div>
-            
-            <div class="feature-group">
-                <h4>🎵 Музыка (15 песен/месяц)</h4>
-                <ul class="feature-list">
-                    <li>MusicGen: 7 песен/месяц</li>
-                    <li>Udio Pro: 4 песни/месяц</li>
-                    <li>Suno V4: 4 песни/месяц</li>
-                </ul>
-            </div>
-            
-            <div class="feature-group">
-                <h4>🎬 Видео (6 роликов/месяц + VEO3)</h4>
-                <ul class="feature-list">
-                    <li>Luma: 3 ролика/месяц (5 сек)</li>
-                    <li>Pika 2.2: 1 ролик/месяц (5 сек<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -103,14 +52,6 @@
         @keyframes shimmer {
             0% { background-position: -200px 0; }
             100% { background-position: calc(200px + 100%) 0; }
-        }
-        
-        .header h1 {
-            margin: 0;
-            font-size: 3em;
-            font-weight: 700;
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .header {
@@ -693,6 +634,67 @@
         .video-spec strong {
             color: #007bff;
         }
+
+        .currency-converter {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid #e9ecef;
+            text-align: center;
+        }
+        
+        .currency-rate {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        
+        .custom-neurons {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .neuron-input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .neuron-input input {
+            padding: 12px 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            width: 150px;
+        }
+        
+        .neuron-input input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .neuron-cost {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -708,13 +710,15 @@
             <div style="margin: 8px 0;"><a href="#free-tariff">🆓 Бесплатный тариф</a></div>
             <div style="margin: 8px 0;"><a href="#starter-tariff">⭐ Стартовый тариф - 499₽</a></div>
             <div style="margin: 8px 0;"><a href="#comfort-tariff">🏠 Комфорт тариф - 999₽</a></div>
-            <div style="margin: 8px 0;"><a href="#popular-tariff">🔥 Популярный тариф - 1499₽</a></div>
-            <div style="margin: 8px 0;"><a href="#maximum-tariff">💎 Максимальный тариф - 2799₽</a></div>
+            <div style="margin: 8px 0;"><a href="#popular-tariff">🔥 Популярный тариф - 1699₽</a></div>
+            <div style="margin: 8px 0;"><a href="#maximum-tariff">💎 Максимальный тариф - 2999₽</a></div>
             <div style="margin: 8px 0;"><a href="#neuron-packages">🧠 Покупка нейронов</a></div>
+            <div style="margin: 8px 0;"><a href="#custom-neurons">💰 Произвольное количество нейронов</a></div>
             <div style="margin: 8px 0;"><a href="#veo3-packages">🎬 Пакеты VEO3</a></div>
             <div style="margin: 8px 0;"><a href="#ai-prices">⚡ Цены ИИ в нейронах</a></div>
             <div style="margin: 8px 0;"><a href="#video-comparison">🎬 Видео ИИ подробно</a></div>
             <div style="margin: 8px 0;"><a href="#comparison">📊 Сравнение тарифов</a></div>
+            <div style="margin: 8px 0;"><a href="#currency-rates">💱 Курсы валют СНГ</a></div>
             <div style="margin: 8px 0;"><a href="#faq">❓ Частые вопросы</a></div>
         </div>
     </div>
@@ -887,14 +891,14 @@
             <div class="tariff-name">🔥 ПОПУЛЯРНЫЙ ТАРИФ</div>
             <div class="tariff-price">
                 <span class="price-old">2999₽</span>
-                <span class="price-new">1499₽/месяц</span>
-                <span class="discount-badge">-50%</span>
+                <span class="price-new">1699₽/месяц</span>
+                <span class="discount-badge">-43%</span>
             </div>
             <div class="tariff-description">⭐ + VEO3 HOLLYWOOD качество БЕСПЛАТНО!</div>
         </div>
         
         <div class="veo3-highlight">
-            <h3>🎬 VEO3 БОНУС: Экономьте 250₽ каждый месяц на Hollywood-качестве!</h3>
+            <h3>🎬 VEO3 БОНУС: Экономьте 350₽ каждый месяц на Hollywood-качестве!</h3>
             <p>Самый крутой ИИ для видео от Google! Создает видео как в Голливуде!</p>
         </div>
         
@@ -915,9 +919,9 @@
                 <ul class="feature-list">
                     <li>Kandinsky 3.1: 100/месяц</li>
                     <li>FLUX Schnell: 70/месяц</li>
-                    <li>FLUX Pro: 30/месяц</li>
-                    <li><strong>Stable Diffusion 3:</strong> 10 изображений/месяц 🎁</li>
-                    <li><strong>Midjourney:</strong> 8 изображений/месяц 🎁</li>
+                    <li>FLUX Pro: 20/месяц</li>
+                    <li><strong>Stable Diffusion 3:</strong> 6 изображений/месяц 🎁</li>
+                    <li><strong>Midjourney:</strong> 4 изображения/месяц 🎁</li>
                 </ul>
             </div>
             
@@ -931,12 +935,12 @@
             </div>
             
             <div class="feature-group">
-                <h4>🎬 Видео (10 роликов/месяц + VEO3)</h4>
+                <h4>🎬 Видео (6 роликов/месяц + VEO3)</h4>
                 <ul class="feature-list">
-                    <li>Pika 2.2: 3 ролика/месяц (5 сек)</li>
                     <li>Luma: 3 ролика/месяц (5 сек)</li>
-                    <li>Kling AI V2.1-master PRO: 2 ролика/месяц (10 сек)</li>
+                    <li>Pika 2.2: 1 ролик/месяц (5 сек)</li>
                     <li>Hailuo-02/Pro: 1 ролик/месяц (6 сек)</li>
+                    <li>Kling AI V2.1-master PRO: 1 ролик/месяц (10 сек)</li>
                     <li><strong>VEO3: 1 ролик/месяц БЕСПЛАТНО</strong> 🎬✨</li>
                 </ul>
             </div>
@@ -958,15 +962,15 @@
         <div class="tariff-header">
             <div class="tariff-name">💎 МАКСИМАЛЬНЫЙ ТАРИФ</div>
             <div class="tariff-price">
-                <span class="price-old">5599₽</span>
-                <span class="price-new">2799₽/месяц</span>
+                <span class="price-old">5999₽</span>
+                <span class="price-new">2999₽/месяц</span>
                 <span class="discount-badge">-50%</span>
             </div>
             <div class="tariff-description">🚀 Все ИИ + приоритет + VIP-поддержка!</div>
         </div>
         
         <div class="veo3-highlight">
-            <h3>🎬 VEO3 ПРЕМИУМ: 2 ролика в месяц (экономия 500₽!)🎬✨</h3>
+            <h3>🎬 VEO3 ПРЕМИУМ: 2 ролика в месяц (экономия 700₽!)🎬✨</h3>
             <p>Удвоенная мощь голливудского качества для профессионалов!</p>
         </div>
         
@@ -1069,6 +1073,58 @@
         </div>
     </div>
 
+    <!-- ПРОИЗВОЛЬНОЕ КОЛИЧЕСТВО НЕЙРОНОВ -->
+    <div class="custom-neurons" id="custom-neurons">
+        <h3 style="text-align: center; margin-bottom: 20px;">💰 Купить любое количество нейронов</h3>
+        <p style="text-align: center; margin-bottom: 25px;">Покупайте ровно столько нейронов, сколько нужно! От 1 до 20,000 нейронов.</p>
+        
+        <div class="neuron-input">
+            <input type="number" id="neuronAmount" placeholder="1000" min="1" max="20000" value="1000" oninput="updateNeuronCost()">
+            <span style="font-size: 1.2em;">🧠</span>
+            <span>=</span>
+            <div class="neuron-cost" id="neuronCost">1000₽</div>
+        </div>
+        
+        <div style="text-align: center; margin: 20px 0;">
+            <div style="font-size: 1.1em; margin-bottom: 15px;">
+                <strong>Курс:</strong> 1 нейрон = 1 рубль
+            </div>
+            <div style="font-size: 0.9em; opacity: 0.9;">
+                Минимум: 1🧠 (1₽) • Максимум: 20,000🧠 (20,000₽)
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 25px;">
+            <button class="btn" onclick="buyCustomNeurons()">💳 Купить нейроны</button>
+        </div>
+    </div>
+
+    <!-- КУРСЫ ВАЛЮТ СНГ -->
+    <div class="section" id="currency-rates">
+        <h2>💱 Курсы валют СНГ</h2>
+        <div class="currency-converter">
+            <h3>Актуальные курсы для покупки нейронов</h3>
+            <p>Курсы обновляются автоматически при оплате</p>
+            
+            <div style="margin: 20px 0;">
+                <div class="currency-rate">🇷🇺 1🧠 = 1.00₽</div>
+                <div class="currency-rate">🇰🇿 1🧠 = 5.50₸</div>
+                <div class="currency-rate">🇺🇿 1🧠 = 130 сум</div>
+                <div class="currency-rate">🇧🇾 1🧠 = 0.33 BYN</div>
+                <div class="currency-rate">🇰🇬 1🧠 = 8.70с</div>
+                <div class="currency-rate">🇹🇯 1🧠 = 1.10 с.</div>
+                <div class="currency-rate">🇦🇲 1🧠 = 4.0 ֏</div>
+                <div class="currency-rate">🇬🇪 1🧠 = 0.28 ₾</div>
+                <div class="currency-rate">🇦🇿 1🧠 = 0.17 ₼</div>
+                <div class="currency-rate">🇲🇩 1🧠 = 1.85 L</div>
+            </div>
+            
+            <p style="font-size: 0.9em; color: #666;">
+                💡 Курсы указаны приблизительно. Точный курс будет рассчитан при оплате.
+            </p>
+        </div>
+    </div>
+
     <!-- СПЕЦИАЛЬНЫЕ ПАКЕТЫ VEO3 -->
     <div class="veo3-packages" id="veo3-packages">
         <h3>🎬 СПЕЦИАЛЬНЫЕ ПАКЕТЫ VEO3</h3>
@@ -1077,22 +1133,23 @@
         <div class="veo3-package-grid">
             <div class="veo3-package">
                 <h4>🎬 5 роликов VEO3</h4>
-                <div class="price">1250🧠</div>
+                <div class="price">1750🧠</div>
+                <div style="text-decoration: line-through; opacity: 0.7;">Обычно: 1750🧠</div>
                 <p>Идеально для тестирования</p>
             </div>
             
             <div class="veo3-package">
                 <h4>🎬 10 роликов VEO3</h4>
-                <div class="price">2400🧠</div>
-                <div style="text-decoration: line-through; opacity: 0.7;">Обычно: 2500🧠</div>
+                <div class="price">3400🧠</div>
+                <div style="text-decoration: line-through; opacity: 0.7;">Обычно: 3500🧠</div>
                 <div class="savings">Экономия: 100🧠</div>
                 <p>Оптимальный выбор</p>
             </div>
             
             <div class="veo3-package">
                 <h4>🎬 20 роликов VEO3</h4>
-                <div class="price">4800🧠</div>
-                <div style="text-decoration: line-through; opacity: 0.7;">Обычно: 5000🧠</div>
+                <div class="price">6800🧠</div>
+                <div style="text-decoration: line-through; opacity: 0.7;">Обычно: 7000🧠</div>
                 <div class="savings">Экономия: 200🧠</div>
                 <p>Максимальная выгода!</p>
             </div>
@@ -1123,11 +1180,11 @@
             <div class="price-category">
                 <h4>🎨 Изображения</h4>
                 <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 5px 0;">Kandinsky 3.1: <strong>2 нейрона</strong></li>
-                    <li style="padding: 5px 0;">FLUX Schnell: <strong>2 нейрона</strong></li>
-                    <li style="padding: 5px 0;">Stable Diffusion 3: <strong>6 нейронов</strong></li>
-                    <li style="padding: 5px 0;">FLUX Pro: <strong>9 нейронов</strong></li>
-                    <li style="padding: 5px 0;">Midjourney: <strong>10 нейронов</strong></li>
+                    <li style="padding: 5px 0;">Kandinsky 3.1: <strong>3 нейрона</strong></li>
+                    <li style="padding: 5px 0;">FLUX Schnell: <strong>3 нейрона</strong></li>
+                    <li style="padding: 5px 0;">Stable Diffusion 3: <strong>7 нейронов</strong></li>
+                    <li style="padding: 5px 0;">FLUX Pro: <strong>7 нейронов</strong></li>
+                    <li style="padding: 5px 0;">Midjourney: <strong>14 нейронов</strong></li>
                 </ul>
             </div>
             
@@ -1141,13 +1198,13 @@
             </div>
             
             <div class="price-category">
-                <h4>🎬 Видео (ОБНОВЛЕНО!)</h4>
+                <h4>🎬 Видео</h4>
                 <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 5px 0;">Luma: <strong>15 нейронов</strong> (5 сек)</li>
-                    <li style="padding: 5px 0;">Pika 2.2: <strong>35 нейронов</strong> (5 сек)</li>
-                    <li style="padding: 5px 0;">Hailuo-02/Pro: <strong>38 нейронов</strong> (6 сек)</li>
-                    <li style="padding: 5px 0;">Kling AI V2.1: <strong>152 нейрона</strong> (10 сек)</li>
-                    <li style="padding: 5px 0; background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; border-radius: 8px; font-weight: bold;"><strong>VEO3: 250 нейронов</strong> (8 сек + озвучка)</li>
+                    <li style="padding: 5px 0;">Luma: <strong>25 нейронов</strong> (5 сек)</li>
+                    <li style="padding: 5px 0;">Pika 2.2: <strong>50 нейронов</strong> (5 сек)</li>
+                    <li style="padding: 5px 0;">Hailuo-02/Pro: <strong>50 нейронов</strong> (6 сек)</li>
+                    <li style="padding: 5px 0;">Kling AI V2.1: <strong>200 нейронов</strong> (10 сек)</li>
+                    <li style="padding: 5px 0; background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; border-radius: 8px; font-weight: bold;"><strong>VEO3: 350 нейронов</strong> (8 сек + озвучка)</li>
                 </ul>
             </div>
             
@@ -1167,7 +1224,7 @@
         <h2>🎬 Видео ИИ - подробное сравнение</h2>
         
         <div class="video-model">
-            <h4>🎬 VEO3 Fast (250🧠)</h4>
+            <h4>🎬 VEO3 Fast (350🧠)</h4>
             <div class="video-specs">
                 <div class="video-spec">
                     <strong>Длительность:</strong> 8 секунд
@@ -1179,14 +1236,14 @@
                     <strong>Особенности:</strong> Автоозвучка, 4K
                 </div>
                 <div class="video-spec">
-                    <strong>Себестоимость:</strong> ~197₽
+                    <strong>Стоимость:</strong> ~350₽
                 </div>
             </div>
             <p><strong>Лучше всего для:</strong> Профессиональные видео, реклама, презентации</p>
         </div>
         
         <div class="video-model">
-            <h4>🎥 Kling AI V2.1-master PRO (152🧠)</h4>
+            <h4>🎥 Kling AI V2.1-master PRO (200🧠)</h4>
             <div class="video-specs">
                 <div class="video-spec">
                     <strong>Длительность:</strong> 10 секунд
@@ -1198,14 +1255,14 @@
                     <strong>Особенности:</strong> Точная физика
                 </div>
                 <div class="video-spec">
-                    <strong>Себестоимость:</strong> ~152₽
+                    <strong>Стоимость:</strong> ~200₽
                 </div>
             </div>
             <p><strong>Лучше всего для:</strong> Динамичные видео, спорт, действие</p>
         </div>
         
-        <div class="video-model">
-            <h4>🎞️ Hailuo-02/Pro (38🧠)</h4>
+                    <div class="video-model">
+            <h4>🎞️ Hailuo-02/Pro (50🧠)</h4>
             <div class="video-specs">
                 <div class="video-spec">
                     <strong>Длительность:</strong> 6 секунд
@@ -1217,14 +1274,14 @@
                     <strong>Особенности:</strong> Быстрая генерация
                 </div>
                 <div class="video-spec">
-                    <strong>Себестоимость:</strong> ~38₽
+                    <strong>Стоимость:</strong> ~50₽
                 </div>
             </div>
             <p><strong>Лучше всего для:</strong> Простые сцены, природа, портреты</p>
         </div>
         
         <div class="video-model">
-            <h4>📹 Pika 2.2 (35🧠)</h4>
+            <h4>📹 Pika 2.2 (50🧠)</h4>
             <div class="video-specs">
                 <div class="video-spec">
                     <strong>Длительность:</strong> 5 секунд
@@ -1236,14 +1293,14 @@
                     <strong>Особенности:</strong> Стилизация
                 </div>
                 <div class="video-spec">
-                    <strong>Себестоимость:</strong> ~36₽
+                    <strong>Стоимость:</strong> ~50₽
                 </div>
             </div>
             <p><strong>Лучше всего для:</strong> Арт-видео, креативный контент</p>
         </div>
         
         <div class="video-model">
-            <h4>🎪 Luma (15🧠)</h4>
+            <h4>🎪 Luma (25🧠)</h4>
             <div class="video-specs">
                 <div class="video-spec">
                     <strong>Длительность:</strong> 5 секунд
@@ -1255,7 +1312,7 @@
                     <strong>Особенности:</strong> Самый дешевый
                 </div>
                 <div class="video-spec">
-                    <strong>Себестоимость:</strong> ~16₽
+                    <strong>Стоимость:</strong> ~25₽
                 </div>
             </div>
             <p><strong>Лучше всего для:</strong> Тестирование, простые видео</p>
@@ -1264,8 +1321,8 @@
         <div class="highlight">
             <h3>💸 Экономия с тарифами:</h3>
             <ul>
-                <li><strong>VEO3 в тариф "Популярный":</strong> экономия 250₽/месяц</li>
-                <li><strong>VEO3 в тариф "Максимальный":</strong> экономия 500₽/месяц</li>
+                <li><strong>VEO3 в тариф "Популярный":</strong> экономия 350₽/месяц</li>
+                <li><strong>VEO3 в тариф "Максимальный":</strong> экономия 700₽/месяц</li>
                 <li><strong>Все остальные видео:</strong> включены в лимиты тарифов</li>
             </ul>
         </div>
@@ -1293,8 +1350,8 @@
                         <td>0₽</td>
                         <td>499₽</td>
                         <td>999₽</td>
-                        <td>1499₽</td>
-                        <td>2799₽</td>
+                        <td>1699₽</td>
+                        <td>2999₽</td>
                     </tr>
                     <tr>
                         <td>💬 Чат</td>
@@ -1315,17 +1372,17 @@
                     <tr>
                         <td>🏆 Midjourney</td>
                         <td>❌</td>
-                        <td>2/месяц</td>
+                        <td>1/месяц</td>
+                        <td>3/месяц</td>
                         <td>4/месяц</td>
-                        <td>8/месяц</td>
                         <td>20/месяц</td>
                     </tr>
                     <tr>
                         <td>🎬 Видео</td>
                         <td>❌</td>
                         <td>2/месяц</td>
-                        <td>5/месяц</td>
-                        <td>10/месяц</td>
+                        <td>4/месяц</td>
+                        <td>6/месяц</td>
                         <td>20/месяц</td>
                     </tr>
                     <tr style="background: #e8f5e8;">
@@ -1393,7 +1450,7 @@
         
         <div class="faq-item">
             <h4>Почему VEO3 стоит дорого?</h4>
-            <p>Google берет $3.20 за 8-секундное видео VEO3. Наша цена 250 нейронов включает минимальную наценку для покрытия расходов.</p>
+            <p>Google берет $4.50 за 8-секундное видео VEO3. Наша цена 350 нейронов включает минимальную наценку для покрытия расходов.</p>
         </div>
         
         <div class="faq-item">
@@ -1410,6 +1467,16 @@
             <p><strong>Месячные лимиты:</strong> Обновляются 1 числа каждого месяца<br>
             <strong>Лимиты НЕ накапливаются</strong> между периодами<br>
             При превышении лимитов автоматически списываются нейроны</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Как работает покупка любого количества нейронов?</h4>
+            <p>Вы можете купить от 1 до 20,000 нейронов по курсу 1₽ = 1🧠. Оплата в валюте вашей страны по актуальному курсу. Нейроны зачисляются мгновенно после оплаты.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Поддерживаются ли валюты СНГ?</h4>
+            <p>Да! Поддерживаются все основные валюты СНГ: рубли, тенге, сумы, белорусские рубли, сомы, сомони, драмы, лари, манаты и леи. Курс рассчитывается автоматически при оплате.</p>
         </div>
         
         <div class="faq-item">
@@ -1468,8 +1535,8 @@
             <h3>🔥 СПЕЦИАЛЬНО ДЛЯ ВИДЕО:</h3>
             <div style="text-align: left; margin-top: 15px;">
                 <div><strong>🎬 Редкое использование:</strong> Покупайте нейроны</div>
-                <div><strong>🎬 1 VEO3 в месяц:</strong> Тариф "Популярный" (экономия 250₽/мес)</div>
-                <div><strong>🎬 2+ VEO3 в месяц:</strong> Тариф "Максимальный" (экономия 500₽/мес)</div>
+                <div><strong>🎬 1 VEO3 в месяц:</strong> Тариф "Популярный" (экономия 350₽/мес)</div>
+                <div><strong>🎬 2+ VEO3 в месяц:</strong> Тариф "Максимальный" (экономия 700₽/мес)</div>
                 <div><strong>🎬 Много видео:</strong> Все тарифы включают обычные видео</div>
             </div>
         </div>
@@ -1487,9 +1554,26 @@
         <div style="margin-top: 30px; padding: 25px; background: #f8f9fa; border-radius: 15px; border: 1px solid #e9ecef;">
             <p><strong>Quantum AI Bot</strong> - самый полный ИИ-помощник в Telegram!</p>
             <p>Единственный бот с доступом к VEO3 и всем лучшим ИИ!</p>
-            <p><strong>Обновление:</strong> Обновленные цены на видео - больше возможностей!</p>
+            <p><strong>Обновление:</strong> Теперь можно покупать любое количество нейронов + поддержка всех валют СНГ!</p>
         </div>
     </div>
+
+<script>
+function updateNeuronCost() {
+    const amount = document.getElementById('neuronAmount').value;
+    const cost = Math.max(1, Math.min(20000, parseInt(amount) || 1000));
+    document.getElementById('neuronCost').textContent = cost + '₽';
+    document.getElementById('neuronAmount').value = cost;
+}
+
+function buyCustomNeurons() {
+    const amount = document.getElementById('neuronAmount').value;
+    alert(`Покупка ${amount} нейронов за ${amount}₽. В реальном боте здесь будет переход к оплате.`);
+}
+
+// Инициализация
+updateNeuronCost();
+</script>
 
 </body>
 </html>
